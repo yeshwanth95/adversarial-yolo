@@ -1,0 +1,14 @@
+*.pyc
+*.swp
+*.log
+*.jpg
+*.bk
+*.o
+*.so
+adversarial_examples.ipynb
+backup/
+
+# Directories
+runs
+weights
+inria
