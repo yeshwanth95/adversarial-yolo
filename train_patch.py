@@ -76,7 +76,7 @@ class PatchTrainer(object):
         scheduler = self.config.scheduler_factory(optimizer)
 
         et0 = time.time()
-        for epoch in range(n_epochs):
+        for epoch in tqdm(range(n_epochs)):
             ep_det_loss = 0
             ep_nps_loss = 0
             ep_tv_loss = 0
