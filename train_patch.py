@@ -143,9 +143,9 @@ class PatchTrainer(object):
             ep_tv_loss = ep_tv_loss/len(train_loader)
             ep_loss = ep_loss/len(train_loader)
 
-            #im = transforms.ToPILImage('RGB')(adv_patch_cpu)
-            #plt.imshow(im)
-            #plt.savefig(f'pics/{time_str}_{self.config.patch_name}_{epoch}.png')
+            im = transforms.ToPILImage('RGB')(adv_patch_cpu)
+            # plt.imshow(im)
+            plt.savefig(f'pics/{time_str}_{self.config.patch_name}_{epoch}.png')
 
             scheduler.step(ep_loss)
             if True:
