@@ -8,6 +8,8 @@
 adversarial_examples.ipynb
 backup/
 
+!data/*.jpg
+
 # Directories
 runs
 weights
