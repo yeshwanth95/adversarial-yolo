@@ -122,6 +122,25 @@ class ReproducePaperObj(BaseConfig):
         self.loss_target = lambda obj, cls: obj
 
 
+class Inria_100_images(BaseConfig):
+    """
+    Reproduce the results from the paper: Generate a patch that minimises object score.
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.img_dir = "inria_100/Train/pos"
+        self.lab_dir = "inria_100/Train/pos/yolo-labels"
+
+        self.batch_size = 8
+        self.patch_size = 300
+
+        self.patch_name = 'ObjectOnlyPaper'
+        self.max_tv = 0.165
+
+        self.loss_target = lambda obj, cls: obj
+
+
 patch_configs = {
     "base": BaseConfig,
     "exp1": Experiment1,
@@ -129,5 +148,6 @@ patch_configs = {
     "exp2_high_res": Experiment2HighRes,
     "exp3_low_res": Experiment3LowRes,
     "exp4_class_only": Experiment4ClassOnly,
-    "paper_obj": ReproducePaperObj
+    "paper_obj": ReproducePaperObj,
+    "inria_100_images": Inria_100_images,
 }

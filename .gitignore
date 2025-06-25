@@ -5,6 +5,7 @@
 *.bk
 *.o
 *.so
+*.zip
 adversarial_examples.ipynb
 backup/
 
@@ -14,3 +15,5 @@ backup/
 runs
 weights
 inria
+inria_100
+pics

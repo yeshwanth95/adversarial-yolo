@@ -145,7 +145,8 @@ class PatchTrainer(object):
 
             im = transforms.ToPILImage('RGB')(adv_patch_cpu)
             # plt.imshow(im)
-            plt.savefig(f'pics/{time_str}_{self.config.patch_name}_{epoch}.png')
+            # plt.savefig(f'pics/{time_str}_{self.config.patch_name}_{epoch}.png')
+            im.save(f'pics/{time_str}_{self.config.patch_name}_{epoch}.png')
 
             scheduler.step(ep_loss)
             if True:
@@ -155,10 +156,10 @@ class PatchTrainer(object):
                 print('  NPS LOSS: ', ep_nps_loss)
                 print('   TV LOSS: ', ep_tv_loss)
                 print('EPOCH TIME: ', et1-et0)
-                #im = transforms.ToPILImage('RGB')(adv_patch_cpu)
+                im = transforms.ToPILImage('RGB')(adv_patch_cpu)
                 #plt.imshow(im)
                 #plt.show()
-                #im.save("saved_patches/patchnew1.jpg")
+                im.save("saved_patches/ayk_patchnew1.jpg")
                 del adv_batch_t, output, max_prob, det_loss, p_img_batch, nps_loss, tv_loss, loss
                 torch.cuda.empty_cache()
             et0 = time.time()
